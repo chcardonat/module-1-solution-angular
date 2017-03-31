@@ -9,6 +9,9 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope){
   $scope.name = "";
   $scope.totalValue = 0;
+  $scope.style= {}
+  $scope.textBox= {}
+
 
   $scope.displayNumeric = function () {
     var totalNameValue = calculateNumericForString($scope.name);
@@ -20,6 +23,9 @@ function LunchCheckController($scope){
 
     var expresionRegular = /\s*,\s*/;
     var count = food.split(expresionRegular);
+    var a = "Enjoy" ;
+    var b = "Too much!";
+    var c = "Please enter data first";
 
     // var count = string.split(",", count);
     var num = 0;
@@ -34,13 +40,34 @@ function LunchCheckController($scope){
     }
 
     if (num <= 3 && num != 0){
-      return ("Enjoy");
+      $scope.style= {
+        color: "green"
+        }
+      $scope.textBox= {
+        border: "solid 3px green"
+      }
+
+
+      return (a);
+
     }
     else if (num>3){
-      return ("Too much!");
+      $scope.style= {
+        color: "green"
+      }
+      $scope.textBox= {
+        border: "solid 3px green"
+      }
+      return (b);
     }
     else{
-    return ("Please enter data first");
+      $scope.style= {
+        color: "red"
+      }
+      $scope.textBox= {
+        border: "solid 3px red"
+      }
+    return (c);
     }
   }
 
