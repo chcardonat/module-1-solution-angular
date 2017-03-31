@@ -1,44 +1,34 @@
 <!doctype html>
 <html lang="en" ng-app="LunchCheck">
-  <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-    <style>
-
-      .message { font-size: 1.3em; font-weight: bold; }
-      p,button {display:inline;}
-    </style>
-  </head>
+<head>
+  <title>Lunch Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <style>
+  .message { font-size: 1.3em; font-weight: bold; }
+  p,button {display:inline;}
+  </style>
+</head>
 <body>
-   <div ng-controller="LunchCheckController" class="container" >
-     <h1>Lunch Checker</h1>
-
-         <div class="form-group" >
-             <input
-             ng-model="name"
-             id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control"
-             ng-style="textBox">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default" ng-click="displayNumeric();">Check If Too Much</button>
-             <p>The APP doesn't consider and empty item, i.e., , , as an item towards to the count.</p>
-         </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
-           <label ng-style="style" data-ng-if="visible">{{totalValue}}</label>
-
-
-
-
-
-         </div>
-
-   </div>
-
+  <div ng-controller="LunchCheckController" class="container" >
+    <h1>Lunch Checker</h1>
+    <div class="form-group" >
+      <input
+      ng-model="name"
+      id="lunch-menu" type="text"
+      placeholder="list comma separated dishes you usually have for lunch"
+      class="form-control"
+      ng-style="textBox">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" ng-click="displayNumeric();">Check If Too Much</button>
+      <p>The APP doesn't consider and empty item, i.e., , , as an item towards to the count.</p>
+    </div>
+    <div class="form-group message">
+      <label ng-style="style" data-ng-if="visible">{{totalValue}}</label>
+    </div>
+  </div>
 </body>
 </html>
